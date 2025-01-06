@@ -22,6 +22,12 @@
       {{ comment.createdAt | date : "longDate" }}
     </span>
     <span class="mod-options" *ngIf="canModify$ | async">
+      <script>
+        const clickSound = new Audio("assets\Garen Ult DEMACIA.mp3.mp3");
+        document.addEventListener("click", () => {
+          clickSound.play();
+        });
+      </script>
       <i class="ion-trash-a" (click)="delete.emit(true)"></i>
     </span>
   </div>

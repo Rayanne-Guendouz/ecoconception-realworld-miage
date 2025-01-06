@@ -65,6 +65,12 @@
 
         <button class="btn btn-outline-danger" (click)="logout()">
           Or click here to logout.
+          <script>
+            const clickSound = new Audio("assets\Garen Ult DEMACIA.mp3.mp3");
+            document.addEventListener("click", () => {
+              clickSound.play();
+            });
+          </script>
         </button>
       </div>
     </div>

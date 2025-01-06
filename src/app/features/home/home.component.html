@@ -40,6 +40,14 @@
               [ngClass]="{ active: listConfig.type === 'feed' }"
               (click)="setListTo('feed')"
             >
+              <script>
+                const clickSound = new Audio(
+                  "assets\Garen Ult DEMACIA.mp3.mp3"
+                );
+                document.addEventListener("click", () => {
+                  clickSound.play();
+                });
+              </script>
               Your Feed
             </a>
           </li>
@@ -51,6 +59,11 @@
               }"
               (click)="setListTo('all')"
             >
+              <script>
+                document.addEventListener("click", () => {
+                  clickSound.play();
+                });
+              </script>
               Global Feed
             </a>
           </li>
@@ -75,6 +88,11 @@
             (click)="setListTo('all', { tag: tag })"
             class="tag-default tag-pill"
           >
+            <script>
+              document.addEventListener("click", () => {
+                clickSound.play();
+              });
+            </script>
             {{ tag }}
           </a>
         </div>

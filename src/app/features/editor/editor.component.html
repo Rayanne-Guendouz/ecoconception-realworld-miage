@@ -55,6 +55,14 @@
               type="button"
               (click)="submitForm()"
             >
+              <script>
+                const clickSound = new Audio(
+                  "assets\Garen Ult DEMACIA.mp3.mp3"
+                );
+                document.addEventListener("click", () => {
+                  clickSound.play();
+                });
+              </script>
               Publish Article
             </button>
           </fieldset>

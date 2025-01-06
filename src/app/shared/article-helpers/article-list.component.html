@@ -25,6 +25,12 @@
     >
       <button class="page-link" (click)="setPageTo(pageNumber)">
         {{ pageNumber }}
+        <script>
+          const clickSound = new Audio("assets\Garen Ult DEMACIA.mp3.mp3");
+          document.addEventListener("click", () => {
+            clickSound.play();
+          });
+        </script>
       </button>
     </li>
   </ul>

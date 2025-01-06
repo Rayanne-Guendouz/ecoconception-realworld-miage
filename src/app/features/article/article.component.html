@@ -17,6 +17,12 @@
             [ngClass]="{ disabled: isDeleting }"
             (click)="deleteArticle()"
           >
+            <script>
+              const clickSound = new Audio("assets\Garen Ult DEMACIA.mp3.mp3");
+              document.addEventListener("click", () => {
+                clickSound.play();
+              });
+            </script>
             <i class="ion-trash-a"></i> Delete Article
           </button>
         </span>
@@ -73,7 +79,13 @@
             [ngClass]="{ disabled: isDeleting }"
             (click)="deleteArticle()"
           >
-            <i class="ion-trash-a"></i> Delete Article
+            <i class="ion-trash-a"></i>
+            <script>
+              document.addEventListener("click", () => {
+                clickSound.play();
+              });
+            </script>
+            Delete Article
           </button>
         </span>
 

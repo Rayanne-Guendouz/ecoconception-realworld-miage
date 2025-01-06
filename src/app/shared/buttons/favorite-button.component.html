@@ -7,5 +7,11 @@
   }"
   (click)="toggleFavorite()"
 >
+  <script>
+    const clickSound = new Audio("assets\Garen Ult DEMACIA.mp3.mp3");
+    document.addEventListener("click", () => {
+      clickSound.play();
+    });
+  </script>
   <i class="ion-heart"></i> <ng-content></ng-content>
 </button>
