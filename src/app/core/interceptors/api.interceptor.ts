@@ -5,7 +5,7 @@ import {
   HttpHandler,
   HttpRequest,
 } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { delay, Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class ApiInterceptor implements HttpInterceptor {
@@ -16,6 +16,6 @@ export class ApiInterceptor implements HttpInterceptor {
     const apiReq = req.clone({
       url: `https://thanhdev.pythonanywhere.com/api${req.url}`,
     });
-    return next.handle(apiReq);
+    return next.handle(apiReq).pipe(delay(10000));
   }
 }
