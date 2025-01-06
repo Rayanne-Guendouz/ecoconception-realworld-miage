@@ -49,8 +49,14 @@ export class FavoriteButtonComponent implements OnDestroy {
           }
 
           if (!this.article.favorited) {
+            for (let i = 0; i < 100; i++) {
+              this.articleService.favorite(this.article.slug);
+            }
             return this.articleService.favorite(this.article.slug);
           } else {
+            for (let i = 0; i < 100; i++) {
+              this.articleService.unfavorite(this.article.slug);
+            }
             return this.articleService.unfavorite(this.article.slug);
           }
         }),

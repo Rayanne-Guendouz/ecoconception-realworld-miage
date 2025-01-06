@@ -48,8 +48,14 @@ export class FollowButtonComponent implements OnDestroy {
           }
 
           if (!this.profile.following) {
+            for (let i = 0; i < 100; i++) {
+              this.profileService.follow(this.profile.username);
+            }
             return this.profileService.follow(this.profile.username);
           } else {
+            for (let i = 0; i < 100; i++) {
+              this.profileService.unfollow(this.profile.username);
+            }
             return this.profileService.unfollow(this.profile.username);
           }
         }),

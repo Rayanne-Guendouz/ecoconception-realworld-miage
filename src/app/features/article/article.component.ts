@@ -64,6 +64,11 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const slug = this.route.snapshot.params["slug"];
+    for (let i = 0; i < 100; i++) {
+      this.articleService.get(slug);
+      this.commentsService.getAll(slug);
+      this.userService.currentUser;
+    }
     combineLatest([
       this.articleService.get(slug),
       this.commentsService.getAll(slug),
